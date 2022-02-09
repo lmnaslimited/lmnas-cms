@@ -39,7 +39,9 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run Unit Test
-        run: yarn test
+        run: |
+          yarn install
+          yarn test
 
       # Runs a set of commands using the runners shell
       - name: Build the backend
