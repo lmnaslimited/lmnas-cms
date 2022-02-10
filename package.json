@@ -11,15 +11,15 @@
     "test": "jest --forceExit --detectOpenHandles"
   },
   "devDependencies": {
-    "jest": "^27.5.1",
+    "sqlite3": "^5.0.2",
     "supertest": "^6.2.2"
   },
   "dependencies": {
     "graphql": "^16.0.1",
+    "jest": "^27.5.1",
     "knex": "0.21.18",
     "pg": "^8.7.1",
     "pg-connection-string": "^2.5.0",
-    "sqlite3": "^5.0.2",
     "strapi": "3.6.8",
     "strapi-admin": "3.6.8",
     "strapi-connector-bookshelf": "3.6.8",
@@ -43,7 +43,6 @@
     "node": ">=10.16.0 <=14.x.x",
     "npm": "^6.0.0"
   },
-  "license": "MIT",
   "jest": {
     "testPathIgnorePatterns": [
       "/node_modules/",
@@ -51,5 +50,6 @@
       ".cache"
     ],
     "testEnvironment": "node"
-  }
+  },
+  "license": "MIT"
 }
