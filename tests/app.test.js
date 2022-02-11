@@ -6,7 +6,6 @@ const { setupStrapi } = require('./helpers/strapi');
 jest.setTimeout(15000)
 beforeAll(async () => {
     await setupStrapi();
-
 });
 /** this code is called after all the tests are finished */
 afterAll(async () => {
@@ -27,6 +26,6 @@ it('strapi is defined', () => {
 });
 
 //Include test of User 
-//require('./user');
-
 require('./unit/user');
+//Include test of API Author
+require('./unit/api/author')
