@@ -41,8 +41,7 @@ jobs:
       - name: Install Dependencies
         run: |
           pwd
-          cd ..
-          pwd
+          ls
           yarn install
 
       # Runs a single command using the runners shell
