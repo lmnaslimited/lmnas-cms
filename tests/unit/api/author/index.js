@@ -7,7 +7,7 @@ beforeAll(async () => {
 });
 
 it('should return Author name and Image', async () => {
-    const image = await upload('/public/uploads/tests/author-mock-image.png')
+    const image = await upload('/tests/uploads/author-mock-image.png')
     // Product mock data
     const mockAuthorData = {
         name: 'Unit Test Author',
