@@ -28,6 +28,7 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
+      - name: Checkout
       
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
@@ -39,7 +40,9 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Install Dependencies
-        run: yarn install
+        run: |
+          cd ..
+          yarn install
 
       # Runs a single command using the runners shell
       - name: Install Dependencies
