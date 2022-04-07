@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_cta_buttons",
+  "info": {
+    "name": "Button",
+    "icon": "arrow-right",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "target": {
+      "type": "string"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "button",
+        "link"
+      ]
+    },
+    "subtitle": {
+      "type": "component",
+      "repeatable": false,
+      "component": "title.title"
+    },
+    "heading": {
+      "type": "string"
+    }
+  }
+}

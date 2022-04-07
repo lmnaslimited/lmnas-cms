@@ -29,3 +29,5 @@ it('strapi is defined', () => {
 require('./unit/user');
 //Include test of API Author
 require('./unit/api/author')
+//Include tests of Categories
+require('./unit/api/category')

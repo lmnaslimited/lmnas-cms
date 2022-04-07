@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_cta_links",
+  "info": {
+    "name": "link",
+    "icon": "link"
+  },
+  "options": {},
+  "attributes": {
+    "linkText": {
+      "type": "string"
+    },
+    "target": {
+      "type": "string"
+    }
+  }
+}
