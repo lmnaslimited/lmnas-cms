@@ -1,0 +1,41 @@
+{
+  "collectionName": "components_body_sections",
+  "info": {
+    "name": "section",
+    "icon": "align-center",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "content": {
+      "type": "richtext"
+    },
+    "image": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "basic",
+        "why"
+      ]
+    },
+    "subtitle": {
+      "type": "component",
+      "repeatable": false,
+      "component": "title.title"
+    },
+    "heading": {
+      "type": "string"
+    }
+  }
+}

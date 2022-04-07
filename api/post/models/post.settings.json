@@ -15,9 +15,6 @@
     "title": {
       "type": "string"
     },
-    "content": {
-      "type": "richtext"
-    },
     "excerpt": {
       "type": "text"
     },
@@ -53,6 +50,24 @@
     "category": {
       "via": "posts",
       "model": "category"
+    },
+    "content": {
+      "type": "dynamiczone",
+      "components": [
+        "cta.button",
+        "body.section",
+        "marketing.subscribe"
+      ]
+    },
+    "meta": {
+      "type": "component",
+      "repeatable": true,
+      "component": "seo.meta"
+    },
+    "herocta": {
+      "type": "component",
+      "repeatable": false,
+      "component": "cta.button"
     }
   }
 }

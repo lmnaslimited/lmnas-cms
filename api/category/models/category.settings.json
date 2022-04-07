@@ -20,8 +20,23 @@
       "targetField": "name"
     },
     "posts": {
-      "collection": "post",
-      "via": "category"
+      "via": "category",
+      "collection": "post"
+    },
+    "image": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "svg": {
+      "type": "text"
     }
   }
 }
