@@ -67,7 +67,8 @@
     "herocta": {
       "type": "component",
       "repeatable": false,
-      "component": "cta.button"
+      "component": "cta.button",
+      "required": true
     }
   }
 }

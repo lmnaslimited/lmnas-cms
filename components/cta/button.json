@@ -17,13 +17,10 @@
         "link"
       ]
     },
-    "subtitle": {
+    "title": {
       "type": "component",
       "repeatable": false,
       "component": "title.title"
-    },
-    "heading": {
-      "type": "string"
     }
   }
 }
