@@ -28,6 +28,11 @@
         "basic",
         "why"
       ]
+    },
+    "title": {
+      "type": "component",
+      "repeatable": false,
+      "component": "title.title"
     }
   }
 }
