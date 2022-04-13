@@ -26,6 +26,14 @@
       "plugin": "upload",
       "required": false,
       "pluginOptions": {}
+    },
+    "about": {
+      "type": "text"
+    },
+    "social": {
+      "type": "component",
+      "repeatable": true,
+      "component": "social.social"
     }
   }
 }

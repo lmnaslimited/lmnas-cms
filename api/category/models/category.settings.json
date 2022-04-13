@@ -36,7 +36,7 @@
       "pluginOptions": {}
     },
     "svg": {
-      "type": "text"
+      "type": "string"
     }
   }
 }
