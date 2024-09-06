@@ -13,7 +13,6 @@
   "devDependencies": {
     "parcel-bundler": "^1.12.5",
     "serverless-plugin-parcel": "^0.1.1",
-    "sqlite3": "^5.0.2",
     "supertest": "^6.2.2"
   },
   "dependencies": {
@@ -30,7 +29,8 @@
     "react": "^18",
     "react-dom": "^18",
     "react-router-dom": "^5.2.0",
-    "styled-components": "^5.2.1"
+    "styled-components": "^5.2.1",
+    "better-sqlite3": "7.6.2"
   },
   "resolutions": {
   "graphql": "16.9.0"

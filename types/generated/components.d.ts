@@ -13,20 +13,6 @@ export interface TitleTitle extends Schema.Component {
   };
 }
 
-export interface SocialSocial extends Schema.Component {
-  collectionName: 'components_social_socials';
-  info: {
-    icon: 'network-wired';
-    description: '';
-    displayName: 'social';
-  };
-  attributes: {
-    handle: Attribute.String;
-    link: Attribute.String;
-    name: Attribute.String;
-  };
-}
-
 export interface SeoMeta extends Schema.Component {
   collectionName: 'components_seo_metas';
   info: {
@@ -40,29 +26,17 @@ export interface SeoMeta extends Schema.Component {
   };
 }
 
-export interface MarketingSubscribe extends Schema.Component {
-  collectionName: 'components_marketing_subscribes';
+export interface SocialSocial extends Schema.Component {
+  collectionName: 'components_social_socials';
   info: {
-    icon: 'hand-point-up';
-    displayName: 'subscribe';
-  };
-  attributes: {
-    formId: Attribute.String;
-  };
-}
-
-export interface BodySection extends Schema.Component {
-  collectionName: 'components_body_sections';
-  info: {
-    icon: 'align-center';
+    icon: 'network-wired';
     description: '';
-    displayName: 'section';
+    displayName: 'social';
   };
   attributes: {
-    content: Attribute.RichText;
-    image: Attribute.Media<'images' | 'files' | 'videos'>;
-    type: Attribute.Enumeration<['basic', 'why']>;
-    title: Attribute.Component<'title.title'>;
+    handle: Attribute.String;
+    link: Attribute.String;
+    name: Attribute.String;
   };
 }
 
@@ -92,16 +66,42 @@ export interface CtaButton extends Schema.Component {
   };
 }
 
+export interface MarketingSubscribe extends Schema.Component {
+  collectionName: 'components_marketing_subscribes';
+  info: {
+    icon: 'hand-point-up';
+    displayName: 'subscribe';
+  };
+  attributes: {
+    formId: Attribute.String;
+  };
+}
+
+export interface BodySection extends Schema.Component {
+  collectionName: 'components_body_sections';
+  info: {
+    icon: 'align-center';
+    description: '';
+    displayName: 'section';
+  };
+  attributes: {
+    content: Attribute.RichText;
+    image: Attribute.Media<'images' | 'files' | 'videos'>;
+    type: Attribute.Enumeration<['basic', 'why']>;
+    title: Attribute.Component<'title.title'>;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
       'title.title': TitleTitle;
-      'social.social': SocialSocial;
       'seo.meta': SeoMeta;
-      'marketing.subscribe': MarketingSubscribe;
-      'body.section': BodySection;
+      'social.social': SocialSocial;
       'cta.link': CtaLink;
       'cta.button': CtaButton;
+      'marketing.subscribe': MarketingSubscribe;
+      'body.section': BodySection;
     }
   }
 }
