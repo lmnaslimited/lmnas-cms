@@ -13,19 +13,6 @@ export interface TitleTitle extends Schema.Component {
   };
 }
 
-export interface SeoMeta extends Schema.Component {
-  collectionName: 'components_seo_metas';
-  info: {
-    icon: 'search-dollar';
-    description: '';
-    displayName: 'meta';
-  };
-  attributes: {
-    content: Attribute.String;
-    name: Attribute.Enumeration<['keyword', 'description', 'author']>;
-  };
-}
-
 export interface SocialSocial extends Schema.Component {
   collectionName: 'components_social_socials';
   info: {
@@ -37,6 +24,17 @@ export interface SocialSocial extends Schema.Component {
     handle: Attribute.String;
     link: Attribute.String;
     name: Attribute.String;
+  };
+}
+
+export interface MarketingSubscribe extends Schema.Component {
+  collectionName: 'components_marketing_subscribes';
+  info: {
+    icon: 'hand-point-up';
+    displayName: 'subscribe';
+  };
+  attributes: {
+    formId: Attribute.String;
   };
 }
 
@@ -66,14 +64,16 @@ export interface CtaButton extends Schema.Component {
   };
 }
 
-export interface MarketingSubscribe extends Schema.Component {
-  collectionName: 'components_marketing_subscribes';
+export interface SeoMeta extends Schema.Component {
+  collectionName: 'components_seo_metas';
   info: {
-    icon: 'hand-point-up';
-    displayName: 'subscribe';
+    icon: 'search-dollar';
+    description: '';
+    displayName: 'meta';
   };
   attributes: {
-    formId: Attribute.String;
+    content: Attribute.String;
+    name: Attribute.Enumeration<['keyword', 'description', 'author']>;
   };
 }
 
@@ -96,11 +96,11 @@ declare module '@strapi/types' {
   export module Shared {
     export interface Components {
       'title.title': TitleTitle;
-      'seo.meta': SeoMeta;
       'social.social': SocialSocial;
+      'marketing.subscribe': MarketingSubscribe;
       'cta.link': CtaLink;
       'cta.button': CtaButton;
-      'marketing.subscribe': MarketingSubscribe;
+      'seo.meta': SeoMeta;
       'body.section': BodySection;
     }
   }
