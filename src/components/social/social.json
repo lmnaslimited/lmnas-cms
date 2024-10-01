@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_social_socials",
+  "info": {
+    "icon": "network-wired",
+    "description": "",
+    "displayName": "social"
+  },
+  "options": {},
+  "attributes": {
+    "handle": {
+      "type": "string"
+    },
+    "link": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    }
+  }
+}

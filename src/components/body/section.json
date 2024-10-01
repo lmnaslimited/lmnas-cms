@@ -1,0 +1,36 @@
+{
+  "collectionName": "components_body_sections",
+  "info": {
+    "icon": "align-center",
+    "description": "",
+    "displayName": "section"
+  },
+  "options": {},
+  "attributes": {
+    "content": {
+      "type": "richtext"
+    },
+    "image": {
+      "type": "media",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "multiple": false,
+      "required": false
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "basic",
+        "why"
+      ]
+    },
+    "title": {
+      "type": "component",
+      "repeatable": false,
+      "component": "title.title"
+    }
+  }
+}

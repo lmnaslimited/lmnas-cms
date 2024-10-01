@@ -1,0 +1,84 @@
+version: '3'
+services:
+  lmnas-cms:
+    image: ${IMAGE:?No IMAGE name set}:${VERSION:?No image VERSION set}
+    restart: always
+    environment:
+      APP_KEYS: ${APP_KEY}
+      API_TOKEN_SALT: ${API_TOKEN_SALT}
+      ADMIN_JWT_SECRET: ${ADMIN_JWT_SECRET}
+      JWT_SECRET: ${JWT_SECRET}
+      DATABASE_CLIENT: postgres
+      DATABASE_HOST: lmnas-cmsDB
+      DATABASE_NAME: strapi
+      DATABASE_USERNAME: strapi
+      DATABASE_PORT: 5432
+      DATABASE_PASSWORD: strapi
+      NODE_ENV: production
+    deploy:
+      labels:
+        - traefik.enable=true
+        - traefik.docker.network=traefik-public
+        - traefik.constraint-label=traefik-public
+        - traefik.http.middlewares.prod-redirect.redirectscheme.scheme=https
+        # adding || Host(`www.lmnas.com`
+        - traefik.http.routers.lmnasblog-http.rule=Host(`lmnasblog.docker.localhost`) || Host(`www.lmnasblog.docker.localhost`)
+        - traefik.http.routers.lmnasblog-http.entrypoints=http
+        - traefik.http.routers.lmnasblog-http.middlewares=prod-redirect
+        # adding || Host(`www.lmnas.com`
+        - traefik.http.routers.lmnasblog-https.rule=Host(`lmnasblog.docker.localhost`) || Host(`www.lmnasblog.docker.localhost`)
+        - traefik.http.routers.lmnasblog-https.entrypoints=https
+        - traefik.http.routers.lmnasblog-https.tls=true
+        - traefik.http.routers.lmnasblog-https.tls.certresolver=le
+        - traefik.http.services.lmnasblog.loadbalancer.server.port=1337
+        # adding below extra line
+        - traefik.http.routers.lmnasblog-https.middlewares=redirect-to-non-www
+        - traefik.http.middlewares.redirect-to-non-www.redirectregex.regex=^https?://www.lmnasblog.docker.localhost/(.*)
+        - traefik.http.middlewares.redirect-to-non-www.redirectregex.replacement=https://lmnasblog.docker.localhost/$${1}
+        - traefik.http.middlewares.redirect-to-non-www.redirectregex.permanent=true
+
+    ports:
+      - '1337:1337'
+    networks:
+      - lmnas-cms
+      - traefik-public
+    depends_on:
+      - lmnas-cmsDB
+      
+  lmnas-cmsDB:
+    restart: always
+    image: postgres:14.5-alpine
+    environment:
+      POSTGRES_USER: strapi
+      POSTGRES_PASSWORD: strapi
+      POSTGRES_DB: strapi
+    volumes:
+      - lmnas-cms-data:/var/lib/postgresql/data/ #using a volume
+      #- ./data:/var/lib/postgresql/data/ # if you want to use a bind folder
+
+    ports:
+      - '5432:5432'
+    networks:
+      - lmnas-cms
+      
+  lmnas-cmsAdminer:
+    image: adminer
+    restart: always
+    ports:
+      - '9090:8080'
+    environment:
+      - ADMINER_DEFAULT_SERVER=lmnas-cmsDB
+    networks:
+      - lmnas-cms
+    depends_on:
+      - lmnas-cmsDB
+
+volumes:
+  lmnas-cms-data:
+
+networks:
+  traefik-public:
+    external: true
+  lmnas-cms:
+    driver: overlay
+    external: false

@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_marketing_subscribes",
+  "info": {
+    "icon": "hand-point-up",
+    "displayName": "subscribe"
+  },
+  "options": {},
+  "attributes": {
+    "formId": {
+      "type": "string"
+    }
+  }
+}

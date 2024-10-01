@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_seo_metas",
+  "info": {
+    "icon": "search-dollar",
+    "description": "",
+    "displayName": "meta"
+  },
+  "options": {},
+  "attributes": {
+    "content": {
+      "type": "string"
+    },
+    "name": {
+      "type": "enumeration",
+      "enum": [
+        "keyword",
+        "description",
+        "author"
+      ]
+    }
+  }
+}
