@@ -1,7 +1,7 @@
 version: '3'
 services:
   lmnas-cms:
-    image: ${IMAGE:?No IMAGE name set}:${VERSION:?No image VERSION set}
+    image: lmnas/dumps:${VERSION}
     restart: always
     environment:
       APP_KEYS: ${APP_KEY}
@@ -10,10 +10,10 @@ services:
       JWT_SECRET: ${JWT_SECRET}
       DATABASE_CLIENT: postgres
       DATABASE_HOST: lmnas-cmsDB
-      DATABASE_NAME: strapi
-      DATABASE_USERNAME: strapi
+      DATABASE_NAME: ${DATABASE_NAME}
+      DATABASE_USERNAME: ${DATABASE_USERNAME}
       DATABASE_PORT: 5432
-      DATABASE_PASSWORD: strapi
+      DATABASE_PASSWORD: ${DATABASE_PASSWORD}
       NODE_ENV: production
     deploy:
       labels:
@@ -21,21 +21,14 @@ services:
         - traefik.docker.network=traefik-public
         - traefik.constraint-label=traefik-public
         - traefik.http.middlewares.prod-redirect.redirectscheme.scheme=https
-        # adding || Host(`www.lmnas.com`
-        - traefik.http.routers.lmnasblog-http.rule=Host(`lmnasblog.docker.localhost`) || Host(`www.lmnasblog.docker.localhost`)
+        - traefik.http.routers.lmnasblog-http.rule=Host(`lmnasblog.docker.localhost`)
         - traefik.http.routers.lmnasblog-http.entrypoints=http
         - traefik.http.routers.lmnasblog-http.middlewares=prod-redirect
-        # adding || Host(`www.lmnas.com`
-        - traefik.http.routers.lmnasblog-https.rule=Host(`lmnasblog.docker.localhost`) || Host(`www.lmnasblog.docker.localhost`)
+        - traefik.http.routers.lmnasblog-https.rule=Host(`lmnasblog.docker.localhost`)
         - traefik.http.routers.lmnasblog-https.entrypoints=https
         - traefik.http.routers.lmnasblog-https.tls=true
         - traefik.http.routers.lmnasblog-https.tls.certresolver=le
         - traefik.http.services.lmnasblog.loadbalancer.server.port=1337
-        # adding below extra line
-        - traefik.http.routers.lmnasblog-https.middlewares=redirect-to-non-www
-        - traefik.http.middlewares.redirect-to-non-www.redirectregex.regex=^https?://www.lmnasblog.docker.localhost/(.*)
-        - traefik.http.middlewares.redirect-to-non-www.redirectregex.replacement=https://lmnasblog.docker.localhost/$${1}
-        - traefik.http.middlewares.redirect-to-non-www.redirectregex.permanent=true
 
     ports:
       - '1337:1337'
@@ -49,12 +42,11 @@ services:
     restart: always
     image: postgres:14.5-alpine
     environment:
-      POSTGRES_USER: strapi
-      POSTGRES_PASSWORD: strapi
-      POSTGRES_DB: strapi
+      POSTGRES_USER: ${DATABASE_USERNAME}
+      POSTGRES_PASSWORD: ${DATABASE_PASSWORD}
+      POSTGRES_DB: ${DATABASE_NAME}
     volumes:
-      - lmnas-cms-data:/var/lib/postgresql/data/ #using a volume
-      #- ./data:/var/lib/postgresql/data/ # if you want to use a bind folder
+      - lmnas-cms-data:/var/lib/postgresql/data/
 
     ports:
       - '5432:5432'
@@ -80,5 +72,4 @@ networks:
   traefik-public:
     external: true
   lmnas-cms:
-    driver: overlay
     external: false
