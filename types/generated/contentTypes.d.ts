@@ -899,6 +899,41 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
   };
 }
 
+export interface ApiIndustryIndustry extends Schema.CollectionType {
+  collectionName: 'industries';
+  info: {
+    singularName: 'industry';
+    pluralName: 'industries';
+    displayName: 'Industry';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    slug: Attribute.UID;
+    lang: Attribute.String;
+    industryHero: Attribute.DynamicZone<['title.title', 'cta.link']>;
+    industryImage: Attribute.Component<'cta.link'>;
+    language: Attribute.DynamicZone<['title.title', 'cta.link']>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::industry.industry',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::industry.industry',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiPostPost extends Schema.CollectionType {
   collectionName: 'posts';
   info: {
@@ -965,6 +1000,7 @@ declare module '@strapi/types' {
       'api::author.author': ApiAuthorAuthor;
       'api::case-study.case-study': ApiCaseStudyCaseStudy;
       'api::category.category': ApiCategoryCategory;
+      'api::industry.industry': ApiIndustryIndustry;
       'api::post.post': ApiPostPost;
     }
   }
