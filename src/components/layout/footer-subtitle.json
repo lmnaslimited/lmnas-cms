@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_layout_footer_subtitles",
+  "info": {
+    "displayName": "FooterSubtitle",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "subTitle": {
+      "type": "component",
+      "repeatable": true,
+      "component": "title.sub-title"
+    },
+    "phoneno": {
+      "type": "string"
+    },
+    "mailid": {
+      "type": "string"
+    },
+    "contactCta": {
+      "type": "component",
+      "repeatable": false,
+      "component": "cta.link"
+    }
+  }
+}

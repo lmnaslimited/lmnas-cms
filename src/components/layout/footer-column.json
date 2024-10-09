@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_layout_footer_columns",
+  "info": {
+    "displayName": "footerCta",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "ctas": {
+      "displayName": "FooterLink",
+      "type": "component",
+      "repeatable": true,
+      "component": "layout.footer-link"
+    },
+    "subTitle": {
+      "type": "text"
+    },
+    "copyright": {
+      "type": "text"
+    }
+  }
+}
