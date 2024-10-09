@@ -27,6 +27,30 @@ export interface SocialSocial extends Schema.Component {
   };
 }
 
+export interface SeoMeta extends Schema.Component {
+  collectionName: 'components_seo_metas';
+  info: {
+    icon: 'search-dollar';
+    description: '';
+    displayName: 'meta';
+  };
+  attributes: {
+    content: Attribute.String;
+    name: Attribute.Enumeration<['keyword', 'description', 'author']>;
+  };
+}
+
+export interface MarketingSubscribe extends Schema.Component {
+  collectionName: 'components_marketing_subscribes';
+  info: {
+    icon: 'hand-point-up';
+    displayName: 'subscribe';
+  };
+  attributes: {
+    formId: Attribute.String;
+  };
+}
+
 export interface CtaLink extends Schema.Component {
   collectionName: 'components_cta_links';
   info: {
@@ -53,17 +77,6 @@ export interface CtaButton extends Schema.Component {
   };
 }
 
-export interface MarketingSubscribe extends Schema.Component {
-  collectionName: 'components_marketing_subscribes';
-  info: {
-    icon: 'hand-point-up';
-    displayName: 'subscribe';
-  };
-  attributes: {
-    formId: Attribute.String;
-  };
-}
-
 export interface BodySection extends Schema.Component {
   collectionName: 'components_body_sections';
   info: {
@@ -79,29 +92,16 @@ export interface BodySection extends Schema.Component {
   };
 }
 
-export interface SeoMeta extends Schema.Component {
-  collectionName: 'components_seo_metas';
-  info: {
-    icon: 'search-dollar';
-    description: '';
-    displayName: 'meta';
-  };
-  attributes: {
-    content: Attribute.String;
-    name: Attribute.Enumeration<['keyword', 'description', 'author']>;
-  };
-}
-
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
       'title.title': TitleTitle;
       'social.social': SocialSocial;
+      'seo.meta': SeoMeta;
+      'marketing.subscribe': MarketingSubscribe;
       'cta.link': CtaLink;
       'cta.button': CtaButton;
-      'marketing.subscribe': MarketingSubscribe;
       'body.section': BodySection;
-      'seo.meta': SeoMeta;
     }
   }
 }

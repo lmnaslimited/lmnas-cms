@@ -1,0 +1,41 @@
+{
+  "kind": "collectionType",
+  "collectionName": "industries",
+  "info": {
+    "singularName": "industry",
+    "pluralName": "industries",
+    "displayName": "Industry",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "slug": {
+      "type": "uid"
+    },
+    "lang": {
+      "type": "string"
+    },
+    "industryHero": {
+      "type": "dynamiczone",
+      "components": [
+        "title.title",
+        "cta.link"
+      ]
+    },
+    "industryImage": {
+      "type": "component",
+      "repeatable": false,
+      "component": "cta.link"
+    },
+    "language": {
+      "type": "dynamiczone",
+      "components": [
+        "title.title",
+        "cta.link"
+      ]
+    }
+  }
+}
