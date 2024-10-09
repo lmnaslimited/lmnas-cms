@@ -972,6 +972,40 @@ export interface ApiIndustryIndustry extends Schema.CollectionType {
   };
 }
 
+export interface ApiNavbarNavbar extends Schema.SingleType {
+  collectionName: 'navbars';
+  info: {
+    singularName: 'navbar';
+    pluralName: 'navbars';
+    displayName: 'Navbar';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    companyName: Attribute.String;
+    logo: Attribute.String;
+    ctas: Attribute.Component<'layout.navbar-column', true>;
+    contactCta: Attribute.Component<'cta.link'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::navbar.navbar',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::navbar.navbar',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiPostPost extends Schema.CollectionType {
   collectionName: 'posts';
   info: {
@@ -1040,6 +1074,7 @@ declare module '@strapi/types' {
       'api::category.category': ApiCategoryCategory;
       'api::footer.footer': ApiFooterFooter;
       'api::industry.industry': ApiIndustryIndustry;
+      'api::navbar.navbar': ApiNavbarNavbar;
       'api::post.post': ApiPostPost;
     }
   }

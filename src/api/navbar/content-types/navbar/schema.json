@@ -1,0 +1,32 @@
+{
+  "kind": "singleType",
+  "collectionName": "navbars",
+  "info": {
+    "singularName": "navbar",
+    "pluralName": "navbars",
+    "displayName": "Navbar",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "companyName": {
+      "type": "string"
+    },
+    "logo": {
+      "type": "string"
+    },
+    "ctas": {
+      "type": "component",
+      "repeatable": true,
+      "component": "layout.navbar-column"
+    },
+    "contactCta": {
+      "type": "component",
+      "repeatable": false,
+      "component": "cta.link"
+    }
+  }
+}
