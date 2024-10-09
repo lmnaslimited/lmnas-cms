@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_layout_navbar_columns",
+  "info": {
+    "displayName": "navbarColumn",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "string"
+    },
+    "href": {
+      "type": "string"
+    },
+    "navs": {
+      "displayName": "navs",
+      "type": "component",
+      "repeatable": true,
+      "component": "layout.navs"
+    },
+    "isDropdown": {
+      "type": "boolean"
+    },
+    "target": {
+      "type": "string"
+    },
+    "rel": {
+      "type": "string"
+    }
+  }
+}
