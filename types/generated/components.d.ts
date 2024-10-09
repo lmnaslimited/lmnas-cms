@@ -63,6 +63,36 @@ export interface MarketingSubscribe extends Schema.Component {
   };
 }
 
+export interface LayoutNavs extends Schema.Component {
+  collectionName: 'components_layout_navs';
+  info: {
+    displayName: 'navs';
+    description: '';
+  };
+  attributes: {
+    text: Attribute.String;
+    slug: Attribute.String;
+    description: Attribute.Text;
+    icon: Attribute.String;
+  };
+}
+
+export interface LayoutNavbarColumn extends Schema.Component {
+  collectionName: 'components_layout_navbar_columns';
+  info: {
+    displayName: 'navbarColumn';
+    description: '';
+  };
+  attributes: {
+    text: Attribute.String;
+    href: Attribute.String;
+    navs: Attribute.Component<'layout.navs', true>;
+    isDropdown: Attribute.Boolean;
+    target: Attribute.String;
+    rel: Attribute.String;
+  };
+}
+
 export interface LayoutFooterSubtitle extends Schema.Component {
   collectionName: 'components_layout_footer_subtitles';
   info: {
@@ -104,36 +134,6 @@ export interface LayoutFooterColumn extends Schema.Component {
     ctas: Attribute.Component<'layout.footer-link', true>;
     subTitle: Attribute.Text;
     copyright: Attribute.Text;
-  };
-}
-
-export interface LayoutNavs extends Schema.Component {
-  collectionName: 'components_layout_navs';
-  info: {
-    displayName: 'navs';
-    description: '';
-  };
-  attributes: {
-    text: Attribute.String;
-    slug: Attribute.String;
-    description: Attribute.Text;
-    icon: Attribute.String;
-  };
-}
-
-export interface LayoutNavbarColumn extends Schema.Component {
-  collectionName: 'components_layout_navbar_columns';
-  info: {
-    displayName: 'navbarColumn';
-    description: '';
-  };
-  attributes: {
-    text: Attribute.String;
-    href: Attribute.String;
-    navs: Attribute.Component<'layout.navs', true>;
-    isDropdown: Attribute.Boolean;
-    target: Attribute.String;
-    rel: Attribute.String;
   };
 }
 
@@ -187,11 +187,11 @@ declare module '@strapi/types' {
       'social.social': SocialSocial;
       'seo.meta': SeoMeta;
       'marketing.subscribe': MarketingSubscribe;
+      'layout.navs': LayoutNavs;
+      'layout.navbar-column': LayoutNavbarColumn;
       'layout.footer-subtitle': LayoutFooterSubtitle;
       'layout.footer-link': LayoutFooterLink;
       'layout.footer-column': LayoutFooterColumn;
-      'layout.navs': LayoutNavs;
-      'layout.navbar-column': LayoutNavbarColumn;
       'cta.link': CtaLink;
       'cta.button': CtaButton;
       'body.section': BodySection;
