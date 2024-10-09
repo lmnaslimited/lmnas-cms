@@ -39,6 +39,30 @@ export interface SocialSocial extends Schema.Component {
   };
 }
 
+export interface SeoMeta extends Schema.Component {
+  collectionName: 'components_seo_metas';
+  info: {
+    icon: 'search-dollar';
+    description: '';
+    displayName: 'meta';
+  };
+  attributes: {
+    content: Attribute.String;
+    name: Attribute.Enumeration<['keyword', 'description', 'author']>;
+  };
+}
+
+export interface MarketingSubscribe extends Schema.Component {
+  collectionName: 'components_marketing_subscribes';
+  info: {
+    icon: 'hand-point-up';
+    displayName: 'subscribe';
+  };
+  attributes: {
+    formId: Attribute.String;
+  };
+}
+
 export interface LayoutFooterSubtitle extends Schema.Component {
   collectionName: 'components_layout_footer_subtitles';
   info: {
@@ -83,6 +107,36 @@ export interface LayoutFooterColumn extends Schema.Component {
   };
 }
 
+export interface LayoutNavs extends Schema.Component {
+  collectionName: 'components_layout_navs';
+  info: {
+    displayName: 'navs';
+    description: '';
+  };
+  attributes: {
+    text: Attribute.String;
+    slug: Attribute.String;
+    description: Attribute.Text;
+    icon: Attribute.String;
+  };
+}
+
+export interface LayoutNavbarColumn extends Schema.Component {
+  collectionName: 'components_layout_navbar_columns';
+  info: {
+    displayName: 'navbarColumn';
+    description: '';
+  };
+  attributes: {
+    text: Attribute.String;
+    href: Attribute.String;
+    navs: Attribute.Component<'layout.navs', true>;
+    isDropdown: Attribute.Boolean;
+    target: Attribute.String;
+    rel: Attribute.String;
+  };
+}
+
 export interface CtaLink extends Schema.Component {
   collectionName: 'components_cta_links';
   info: {
@@ -110,17 +164,6 @@ export interface CtaButton extends Schema.Component {
   };
 }
 
-export interface MarketingSubscribe extends Schema.Component {
-  collectionName: 'components_marketing_subscribes';
-  info: {
-    icon: 'hand-point-up';
-    displayName: 'subscribe';
-  };
-  attributes: {
-    formId: Attribute.String;
-  };
-}
-
 export interface BodySection extends Schema.Component {
   collectionName: 'components_body_sections';
   info: {
@@ -136,33 +179,22 @@ export interface BodySection extends Schema.Component {
   };
 }
 
-export interface SeoMeta extends Schema.Component {
-  collectionName: 'components_seo_metas';
-  info: {
-    icon: 'search-dollar';
-    description: '';
-    displayName: 'meta';
-  };
-  attributes: {
-    content: Attribute.String;
-    name: Attribute.Enumeration<['keyword', 'description', 'author']>;
-  };
-}
-
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
       'title.title': TitleTitle;
       'title.sub-title': TitleSubTitle;
       'social.social': SocialSocial;
+      'seo.meta': SeoMeta;
+      'marketing.subscribe': MarketingSubscribe;
       'layout.footer-subtitle': LayoutFooterSubtitle;
       'layout.footer-link': LayoutFooterLink;
       'layout.footer-column': LayoutFooterColumn;
+      'layout.navs': LayoutNavs;
+      'layout.navbar-column': LayoutNavbarColumn;
       'cta.link': CtaLink;
       'cta.button': CtaButton;
-      'marketing.subscribe': MarketingSubscribe;
       'body.section': BodySection;
-      'seo.meta': SeoMeta;
     }
   }
 }
