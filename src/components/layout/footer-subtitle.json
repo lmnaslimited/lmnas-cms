@@ -11,7 +11,7 @@
     },
     "subTitle": {
       "type": "component",
-      "repeatable": true,
+      "repeatable": false,
       "component": "title.sub-title"
     },
     "phoneno": {
@@ -24,6 +24,11 @@
       "type": "component",
       "repeatable": false,
       "component": "cta.link"
+    },
+    "address": {
+      "type": "component",
+      "repeatable": false,
+      "component": "title.sub-title"
     }
   }
 }

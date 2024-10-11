@@ -4,8 +4,7 @@
   "info": {
     "singularName": "industry",
     "pluralName": "industries",
-    "displayName": "Industry",
-    "description": ""
+    "displayName": "Industry"
   },
   "options": {
     "draftAndPublish": true
@@ -17,25 +16,6 @@
     },
     "lang": {
       "type": "string"
-    },
-    "industryHero": {
-      "type": "dynamiczone",
-      "components": [
-        "title.title",
-        "cta.link"
-      ]
-    },
-    "industryImage": {
-      "type": "component",
-      "repeatable": false,
-      "component": "cta.link"
-    },
-    "language": {
-      "type": "dynamiczone",
-      "components": [
-        "title.title",
-        "cta.link"
-      ]
     }
   }
 }
