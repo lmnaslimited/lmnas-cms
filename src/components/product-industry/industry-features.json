@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_product_industry_industry_features",
+  "info": {
+    "displayName": "industryFeatures",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "component",
+      "repeatable": false,
+      "component": "title.title"
+    },
+    "card": {
+      "type": "component",
+      "repeatable": true,
+      "component": "product-industry.industry-card"
+    },
+    "cta": {
+      "type": "string"
+    },
+    "ctahref": {
+      "type": "string"
+    }
+  }
+}

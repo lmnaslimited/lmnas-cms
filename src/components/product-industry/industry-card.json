@@ -1,0 +1,43 @@
+{
+  "collectionName": "components_product_industry_industry_cards",
+  "info": {
+    "displayName": "IndustryCard",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "icon": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "startHref": {
+      "type": "string"
+    },
+    "start": {
+      "type": "string"
+    },
+    "tryHref": {
+      "type": "string"
+    },
+    "try": {
+      "type": "string"
+    },
+    "imageUrl": {
+      "type": "string"
+    },
+    "content": {
+      "type": "string"
+    },
+    "cta": {
+      "type": "string"
+    },
+    "ctahref": {
+      "type": "string"
+    }
+  }
+}

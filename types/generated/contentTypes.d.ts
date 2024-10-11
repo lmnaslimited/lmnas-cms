@@ -943,6 +943,7 @@ export interface ApiIndustryIndustry extends Schema.CollectionType {
     singularName: 'industry';
     pluralName: 'industries';
     displayName: 'Industry';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -950,6 +951,15 @@ export interface ApiIndustryIndustry extends Schema.CollectionType {
   attributes: {
     slug: Attribute.UID;
     lang: Attribute.String;
+    industryHero: Attribute.DynamicZone<['title.title', 'cta.link']>;
+    industryImage: Attribute.Component<'cta.link'>;
+    language: Attribute.DynamicZone<['title.title', 'cta.link']>;
+    industryFeatures: Attribute.Component<'product-industry.industry-features'>;
+    industryImgFeature: Attribute.Component<'product-industry.industry-features'>;
+    industryUseCase: Attribute.Component<'product-industry.industry-features'>;
+    contactSection: Attribute.Component<'social.contact-section'>;
+    layoutData: Attribute.Component<'layout.layout-data'>;
+    metaData: Attribute.Component<'seo.sb-meta'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

@@ -25,43 +25,62 @@ export interface TitleSubTitle extends Schema.Component {
   };
 }
 
-export interface SocialSocial extends Schema.Component {
-  collectionName: 'components_social_socials';
+export interface ProductIndustryIndustryFeatures extends Schema.Component {
+  collectionName: 'components_product_industry_industry_features';
   info: {
-    icon: 'network-wired';
+    displayName: 'industryFeatures';
     description: '';
-    displayName: 'social';
   };
   attributes: {
-    handle: Attribute.String;
-    link: Attribute.String;
-    name: Attribute.String;
+    heading: Attribute.Component<'title.title'>;
+    card: Attribute.Component<'product-industry.industry-card', true>;
+    cta: Attribute.String;
+    ctahref: Attribute.String;
   };
 }
 
-export interface SocialContact extends Schema.Component {
-  collectionName: 'components_social_contacts';
+export interface ProductIndustryIndustryCard extends Schema.Component {
+  collectionName: 'components_product_industry_industry_cards';
   info: {
-    displayName: 'contact';
+    displayName: 'IndustryCard';
+    description: '';
   };
   attributes: {
     icon: Attribute.String;
-    contact: Attribute.String;
     title: Attribute.String;
-    href: Attribute.String;
+    description: Attribute.String;
+    startHref: Attribute.String;
+    start: Attribute.String;
+    tryHref: Attribute.String;
+    try: Attribute.String;
+    imageUrl: Attribute.String;
+    content: Attribute.String;
+    cta: Attribute.String;
+    ctahref: Attribute.String;
   };
 }
 
-export interface SocialContactSection extends Schema.Component {
-  collectionName: 'components_social_contact_sections';
+export interface ProductIndustryHeroSection extends Schema.Component {
+  collectionName: 'components_product_industry_hero_sections';
   info: {
-    displayName: 'contactSection';
+    displayName: 'HeroSection';
   };
   attributes: {
-    tag: Attribute.String;
-    title: Attribute.String;
-    subTitle: Attribute.String;
-    contactMenthos: Attribute.Component<'social.contact', true>;
+    title: Attribute.Component<'title.title'>;
+    subTitle: Attribute.Component<'title.title'>;
+    cta1: Attribute.Component<'cta.link'>;
+    cta2: Attribute.Component<'cta.link'>;
+  };
+}
+
+export interface MarketingSubscribe extends Schema.Component {
+  collectionName: 'components_marketing_subscribes';
+  info: {
+    icon: 'hand-point-up';
+    displayName: 'subscribe';
+  };
+  attributes: {
+    formId: Attribute.String;
   };
 }
 
@@ -123,54 +142,43 @@ export interface SeoMeta extends Schema.Component {
   };
 }
 
-export interface ProductIndustryHeroSection extends Schema.Component {
-  collectionName: 'components_product_industry_hero_sections';
+export interface SocialSocial extends Schema.Component {
+  collectionName: 'components_social_socials';
   info: {
-    displayName: 'HeroSection';
-  };
-  attributes: {
-    title: Attribute.Component<'title.title'>;
-    subTitle: Attribute.Component<'title.title'>;
-    cta1: Attribute.Component<'cta.link'>;
-    cta2: Attribute.Component<'cta.link'>;
-  };
-}
-
-export interface MarketingSubscribe extends Schema.Component {
-  collectionName: 'components_marketing_subscribes';
-  info: {
-    icon: 'hand-point-up';
-    displayName: 'subscribe';
-  };
-  attributes: {
-    formId: Attribute.String;
-  };
-}
-
-export interface CtaLink extends Schema.Component {
-  collectionName: 'components_cta_links';
-  info: {
-    icon: 'link';
-    displayName: 'link';
+    icon: 'network-wired';
     description: '';
+    displayName: 'social';
   };
   attributes: {
-    linkText: Attribute.String;
-    target: Attribute.String;
+    handle: Attribute.String;
+    link: Attribute.String;
+    name: Attribute.String;
   };
 }
 
-export interface CtaButton extends Schema.Component {
-  collectionName: 'components_cta_buttons';
+export interface SocialContact extends Schema.Component {
+  collectionName: 'components_social_contacts';
   info: {
-    icon: 'arrow-right';
-    description: '';
-    displayName: 'Button';
+    displayName: 'contact';
   };
   attributes: {
-    target: Attribute.String;
-    type: Attribute.Enumeration<['button', 'link']>;
-    title: Attribute.Component<'title.title'>;
+    icon: Attribute.String;
+    contact: Attribute.String;
+    title: Attribute.String;
+    href: Attribute.String;
+  };
+}
+
+export interface SocialContactSection extends Schema.Component {
+  collectionName: 'components_social_contact_sections';
+  info: {
+    displayName: 'contactSection';
+  };
+  attributes: {
+    tag: Attribute.String;
+    title: Attribute.String;
+    subTitle: Attribute.String;
+    contactMenthos: Attribute.Component<'social.contact', true>;
   };
 }
 
@@ -201,6 +209,18 @@ export interface LayoutNavbarColumn extends Schema.Component {
     isDropdown: Attribute.Boolean;
     target: Attribute.String;
     rel: Attribute.String;
+  };
+}
+
+export interface LayoutLayoutData extends Schema.Component {
+  collectionName: 'components_layout_layout_data';
+  info: {
+    displayName: 'LayoutData';
+  };
+  attributes: {
+    footerData: Attribute.String;
+    navbar: Attribute.String;
+    floatingbtn: Attribute.String;
   };
 }
 
@@ -249,6 +269,33 @@ export interface LayoutFooterColumn extends Schema.Component {
   };
 }
 
+export interface CtaLink extends Schema.Component {
+  collectionName: 'components_cta_links';
+  info: {
+    icon: 'link';
+    displayName: 'link';
+    description: '';
+  };
+  attributes: {
+    linkText: Attribute.String;
+    target: Attribute.String;
+  };
+}
+
+export interface CtaButton extends Schema.Component {
+  collectionName: 'components_cta_buttons';
+  info: {
+    icon: 'arrow-right';
+    description: '';
+    displayName: 'Button';
+  };
+  attributes: {
+    target: Attribute.String;
+    type: Attribute.Enumeration<['button', 'link']>;
+    title: Attribute.Component<'title.title'>;
+  };
+}
+
 export interface BodySection extends Schema.Component {
   collectionName: 'components_body_sections';
   info: {
@@ -269,22 +316,25 @@ declare module '@strapi/types' {
     export interface Components {
       'title.title': TitleTitle;
       'title.sub-title': TitleSubTitle;
-      'social.social': SocialSocial;
-      'social.contact': SocialContact;
-      'social.contact-section': SocialContactSection;
+      'product-industry.industry-features': ProductIndustryIndustryFeatures;
+      'product-industry.industry-card': ProductIndustryIndustryCard;
+      'product-industry.hero-section': ProductIndustryHeroSection;
+      'marketing.subscribe': MarketingSubscribe;
       'seo.sb-schema-data': SeoSbSchemaData;
       'seo.sb-meta': SeoSbMeta;
       'seo.sb-meta-attribute-b': SeoSbMetaAttributeB;
       'seo.meta': SeoMeta;
-      'product-industry.hero-section': ProductIndustryHeroSection;
-      'marketing.subscribe': MarketingSubscribe;
-      'cta.link': CtaLink;
-      'cta.button': CtaButton;
+      'social.social': SocialSocial;
+      'social.contact': SocialContact;
+      'social.contact-section': SocialContactSection;
       'layout.navs': LayoutNavs;
       'layout.navbar-column': LayoutNavbarColumn;
+      'layout.layout-data': LayoutLayoutData;
       'layout.footer-subtitle': LayoutFooterSubtitle;
       'layout.footer-link': LayoutFooterLink;
       'layout.footer-column': LayoutFooterColumn;
+      'cta.link': CtaLink;
+      'cta.button': CtaButton;
       'body.section': BodySection;
     }
   }
