@@ -123,17 +123,6 @@ export interface SeoMeta extends Schema.Component {
   };
 }
 
-export interface MarketingSubscribe extends Schema.Component {
-  collectionName: 'components_marketing_subscribes';
-  info: {
-    icon: 'hand-point-up';
-    displayName: 'subscribe';
-  };
-  attributes: {
-    formId: Attribute.String;
-  };
-}
-
 export interface ProductIndustryHeroSection extends Schema.Component {
   collectionName: 'components_product_industry_hero_sections';
   info: {
@@ -144,6 +133,17 @@ export interface ProductIndustryHeroSection extends Schema.Component {
     subTitle: Attribute.Component<'title.title'>;
     cta1: Attribute.Component<'cta.link'>;
     cta2: Attribute.Component<'cta.link'>;
+  };
+}
+
+export interface MarketingSubscribe extends Schema.Component {
+  collectionName: 'components_marketing_subscribes';
+  info: {
+    icon: 'hand-point-up';
+    displayName: 'subscribe';
+  };
+  attributes: {
+    formId: Attribute.String;
   };
 }
 
@@ -276,8 +276,8 @@ declare module '@strapi/types' {
       'seo.sb-meta': SeoSbMeta;
       'seo.sb-meta-attribute-b': SeoSbMetaAttributeB;
       'seo.meta': SeoMeta;
-      'marketing.subscribe': MarketingSubscribe;
       'product-industry.hero-section': ProductIndustryHeroSection;
+      'marketing.subscribe': MarketingSubscribe;
       'cta.link': CtaLink;
       'cta.button': CtaButton;
       'layout.navs': LayoutNavs;
