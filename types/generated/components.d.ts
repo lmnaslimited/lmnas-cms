@@ -123,6 +123,27 @@ export interface SeoMeta extends Schema.Component {
   };
 }
 
+export interface ProductIndustryProductTab extends Schema.Component {
+  collectionName: 'components_product_industry_product_tabs';
+  info: {
+    displayName: 'productTab';
+  };
+  attributes: {
+    tabName: Attribute.String;
+    icon: Attribute.String;
+  };
+}
+
+export interface ProductIndustryProductTabContent extends Schema.Component {
+  collectionName: 'components_product_industry_product_tab_contents';
+  info: {
+    displayName: 'productTabContent';
+  };
+  attributes: {
+    title: Attribute.Component<'title.title', true>;
+  };
+}
+
 export interface ProductIndustryHeroSection extends Schema.Component {
   collectionName: 'components_product_industry_hero_sections';
   info: {
@@ -144,33 +165,6 @@ export interface MarketingSubscribe extends Schema.Component {
   };
   attributes: {
     formId: Attribute.String;
-  };
-}
-
-export interface CtaLink extends Schema.Component {
-  collectionName: 'components_cta_links';
-  info: {
-    icon: 'link';
-    displayName: 'link';
-    description: '';
-  };
-  attributes: {
-    linkText: Attribute.String;
-    target: Attribute.String;
-  };
-}
-
-export interface CtaButton extends Schema.Component {
-  collectionName: 'components_cta_buttons';
-  info: {
-    icon: 'arrow-right';
-    description: '';
-    displayName: 'Button';
-  };
-  attributes: {
-    target: Attribute.String;
-    type: Attribute.Enumeration<['button', 'link']>;
-    title: Attribute.Component<'title.title'>;
   };
 }
 
@@ -201,6 +195,19 @@ export interface LayoutNavbarColumn extends Schema.Component {
     isDropdown: Attribute.Boolean;
     target: Attribute.String;
     rel: Attribute.String;
+  };
+}
+
+export interface LayoutLayoutData extends Schema.Component {
+  collectionName: 'components_layout_layout_data';
+  info: {
+    displayName: 'layoutData';
+    description: '';
+  };
+  attributes: {
+    footerData: Attribute.String;
+    navbar: Attribute.String;
+    floating: Attribute.String;
   };
 }
 
@@ -249,6 +256,33 @@ export interface LayoutFooterColumn extends Schema.Component {
   };
 }
 
+export interface CtaLink extends Schema.Component {
+  collectionName: 'components_cta_links';
+  info: {
+    icon: 'link';
+    displayName: 'link';
+    description: '';
+  };
+  attributes: {
+    linkText: Attribute.String;
+    target: Attribute.String;
+  };
+}
+
+export interface CtaButton extends Schema.Component {
+  collectionName: 'components_cta_buttons';
+  info: {
+    icon: 'arrow-right';
+    description: '';
+    displayName: 'Button';
+  };
+  attributes: {
+    target: Attribute.String;
+    type: Attribute.Enumeration<['button', 'link']>;
+    title: Attribute.Component<'title.title'>;
+  };
+}
+
 export interface BodySection extends Schema.Component {
   collectionName: 'components_body_sections';
   info: {
@@ -276,15 +310,18 @@ declare module '@strapi/types' {
       'seo.sb-meta': SeoSbMeta;
       'seo.sb-meta-attribute-b': SeoSbMetaAttributeB;
       'seo.meta': SeoMeta;
+      'product-industry.product-tab': ProductIndustryProductTab;
+      'product-industry.product-tab-content': ProductIndustryProductTabContent;
       'product-industry.hero-section': ProductIndustryHeroSection;
       'marketing.subscribe': MarketingSubscribe;
-      'cta.link': CtaLink;
-      'cta.button': CtaButton;
       'layout.navs': LayoutNavs;
       'layout.navbar-column': LayoutNavbarColumn;
+      'layout.layout-data': LayoutLayoutData;
       'layout.footer-subtitle': LayoutFooterSubtitle;
       'layout.footer-link': LayoutFooterLink;
       'layout.footer-column': LayoutFooterColumn;
+      'cta.link': CtaLink;
+      'cta.button': CtaButton;
       'body.section': BodySection;
     }
   }
