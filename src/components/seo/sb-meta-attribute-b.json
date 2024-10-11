@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_seo_sb_meta_attribute_bs",
+  "info": {
+    "displayName": "SB metaAttribute B"
+  },
+  "options": {},
+  "attributes": {
+    "type": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "entityID": {
+      "type": "string"
+    }
+  }
+}

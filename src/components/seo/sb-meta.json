@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_seo_sb_metas",
+  "info": {
+    "displayName": "SB Meta B",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "pageUrl": {
+      "type": "string"
+    },
+    "schemaData": {
+      "displayName": "SB schemaData",
+      "type": "component",
+      "repeatable": false,
+      "component": "seo.sb-schema-data"
+    }
+  }
+}

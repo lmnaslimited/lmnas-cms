@@ -1,0 +1,45 @@
+{
+  "collectionName": "components_seo_sb_schema_data",
+  "info": {
+    "displayName": "SB schemaData"
+  },
+  "options": {},
+  "attributes": {
+    "context": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "image": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    },
+    "author": {
+      "type": "component",
+      "repeatable": false,
+      "component": "seo.sb-meta-attribute-b"
+    },
+    "publisher": {
+      "type": "component",
+      "repeatable": false,
+      "component": "seo.sb-meta-attribute-b"
+    },
+    "datePublished": {
+      "type": "string"
+    },
+    "mainEntityOfPage": {
+      "type": "component",
+      "repeatable": false,
+      "component": "seo.sb-meta-attribute-b"
+    }
+  }
+}

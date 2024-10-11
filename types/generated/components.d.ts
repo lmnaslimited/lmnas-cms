@@ -39,6 +39,51 @@ export interface SocialSocial extends Schema.Component {
   };
 }
 
+export interface SeoSbSchemaData extends Schema.Component {
+  collectionName: 'components_seo_sb_schema_data';
+  info: {
+    displayName: 'SB schemaData';
+  };
+  attributes: {
+    context: Attribute.String;
+    type: Attribute.String;
+    name: Attribute.String;
+    description: Attribute.Text;
+    image: Attribute.String;
+    url: Attribute.String;
+    author: Attribute.Component<'seo.sb-meta-attribute-b'>;
+    publisher: Attribute.Component<'seo.sb-meta-attribute-b'>;
+    datePublished: Attribute.String;
+    mainEntityOfPage: Attribute.Component<'seo.sb-meta-attribute-b'>;
+  };
+}
+
+export interface SeoSbMeta extends Schema.Component {
+  collectionName: 'components_seo_sb_metas';
+  info: {
+    displayName: 'SB Meta B';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.String;
+    description: Attribute.Text;
+    pageUrl: Attribute.String;
+    schemaData: Attribute.Component<'seo.sb-schema-data'>;
+  };
+}
+
+export interface SeoSbMetaAttributeB extends Schema.Component {
+  collectionName: 'components_seo_sb_meta_attribute_bs';
+  info: {
+    displayName: 'SB metaAttribute B';
+  };
+  attributes: {
+    type: Attribute.String;
+    name: Attribute.String;
+    entityID: Attribute.String;
+  };
+}
+
 export interface SeoMeta extends Schema.Component {
   collectionName: 'components_seo_metas';
   info: {
@@ -60,6 +105,33 @@ export interface MarketingSubscribe extends Schema.Component {
   };
   attributes: {
     formId: Attribute.String;
+  };
+}
+
+export interface CtaLink extends Schema.Component {
+  collectionName: 'components_cta_links';
+  info: {
+    icon: 'link';
+    displayName: 'link';
+    description: '';
+  };
+  attributes: {
+    linkText: Attribute.String;
+    target: Attribute.String;
+  };
+}
+
+export interface CtaButton extends Schema.Component {
+  collectionName: 'components_cta_buttons';
+  info: {
+    icon: 'arrow-right';
+    description: '';
+    displayName: 'Button';
+  };
+  attributes: {
+    target: Attribute.String;
+    type: Attribute.Enumeration<['button', 'link']>;
+    title: Attribute.Component<'title.title'>;
   };
 }
 
@@ -101,10 +173,11 @@ export interface LayoutFooterSubtitle extends Schema.Component {
   };
   attributes: {
     title: Attribute.String;
-    subTitle: Attribute.Component<'title.sub-title', true>;
+    subTitle: Attribute.Component<'title.sub-title'>;
     phoneno: Attribute.String;
     mailid: Attribute.String;
     contactCta: Attribute.Component<'cta.link'>;
+    address: Attribute.Component<'title.sub-title'>;
   };
 }
 
@@ -137,33 +210,6 @@ export interface LayoutFooterColumn extends Schema.Component {
   };
 }
 
-export interface CtaLink extends Schema.Component {
-  collectionName: 'components_cta_links';
-  info: {
-    icon: 'link';
-    displayName: 'link';
-    description: '';
-  };
-  attributes: {
-    linkText: Attribute.String;
-    target: Attribute.String;
-  };
-}
-
-export interface CtaButton extends Schema.Component {
-  collectionName: 'components_cta_buttons';
-  info: {
-    icon: 'arrow-right';
-    description: '';
-    displayName: 'Button';
-  };
-  attributes: {
-    target: Attribute.String;
-    type: Attribute.Enumeration<['button', 'link']>;
-    title: Attribute.Component<'title.title'>;
-  };
-}
-
 export interface BodySection extends Schema.Component {
   collectionName: 'components_body_sections';
   info: {
@@ -185,15 +231,18 @@ declare module '@strapi/types' {
       'title.title': TitleTitle;
       'title.sub-title': TitleSubTitle;
       'social.social': SocialSocial;
+      'seo.sb-schema-data': SeoSbSchemaData;
+      'seo.sb-meta': SeoSbMeta;
+      'seo.sb-meta-attribute-b': SeoSbMetaAttributeB;
       'seo.meta': SeoMeta;
       'marketing.subscribe': MarketingSubscribe;
+      'cta.link': CtaLink;
+      'cta.button': CtaButton;
       'layout.navs': LayoutNavs;
       'layout.navbar-column': LayoutNavbarColumn;
       'layout.footer-subtitle': LayoutFooterSubtitle;
       'layout.footer-link': LayoutFooterLink;
       'layout.footer-column': LayoutFooterColumn;
-      'cta.link': CtaLink;
-      'cta.button': CtaButton;
       'body.section': BodySection;
     }
   }
