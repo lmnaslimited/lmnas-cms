@@ -1069,7 +1069,6 @@ declare module '@strapi/types' {
       'api::case-study.case-study': ApiCaseStudyCaseStudy;
       'api::category.category': ApiCategoryCategory;
       'api::footer.footer': ApiFooterFooter;
-      'api::industry.industry': ApiIndustryIndustry;
       'api::navbar.navbar': ApiNavbarNavbar;
       'api::post.post': ApiPostPost;
     }
