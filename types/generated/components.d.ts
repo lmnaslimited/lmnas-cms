@@ -39,6 +39,32 @@ export interface SocialSocial extends Schema.Component {
   };
 }
 
+export interface SocialContact extends Schema.Component {
+  collectionName: 'components_social_contacts';
+  info: {
+    displayName: 'contact';
+  };
+  attributes: {
+    icon: Attribute.String;
+    contact: Attribute.String;
+    title: Attribute.String;
+    href: Attribute.String;
+  };
+}
+
+export interface SocialContactSection extends Schema.Component {
+  collectionName: 'components_social_contact_sections';
+  info: {
+    displayName: 'contactSection';
+  };
+  attributes: {
+    tag: Attribute.String;
+    title: Attribute.String;
+    subTitle: Attribute.String;
+    contactMenthos: Attribute.Component<'social.contact', true>;
+  };
+}
+
 export interface SeoMeta extends Schema.Component {
   collectionName: 'components_seo_metas';
   info: {
@@ -60,6 +86,19 @@ export interface MarketingSubscribe extends Schema.Component {
   };
   attributes: {
     formId: Attribute.String;
+  };
+}
+
+export interface ProductIndustryHeroSection extends Schema.Component {
+  collectionName: 'components_product_industry_hero_sections';
+  info: {
+    displayName: 'HeroSection';
+  };
+  attributes: {
+    title: Attribute.Component<'title.title'>;
+    subTitle: Attribute.Component<'title.title'>;
+    cta1: Attribute.Component<'cta.link'>;
+    cta2: Attribute.Component<'cta.link'>;
   };
 }
 
@@ -185,8 +224,11 @@ declare module '@strapi/types' {
       'title.title': TitleTitle;
       'title.sub-title': TitleSubTitle;
       'social.social': SocialSocial;
+      'social.contact': SocialContact;
+      'social.contact-section': SocialContactSection;
       'seo.meta': SeoMeta;
       'marketing.subscribe': MarketingSubscribe;
+      'product-industry.hero-section': ProductIndustryHeroSection;
       'layout.navs': LayoutNavs;
       'layout.navbar-column': LayoutNavbarColumn;
       'layout.footer-subtitle': LayoutFooterSubtitle;

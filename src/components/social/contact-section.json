@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_social_contact_sections",
+  "info": {
+    "displayName": "contactSection"
+  },
+  "options": {},
+  "attributes": {
+    "tag": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "subTitle": {
+      "type": "string"
+    },
+    "contactMenthos": {
+      "type": "component",
+      "repeatable": true,
+      "component": "social.contact"
+    }
+  }
+}

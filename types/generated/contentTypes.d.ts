@@ -937,41 +937,6 @@ export interface ApiFooterFooter extends Schema.SingleType {
   };
 }
 
-export interface ApiIndustryIndustry extends Schema.CollectionType {
-  collectionName: 'industries';
-  info: {
-    singularName: 'industry';
-    pluralName: 'industries';
-    displayName: 'Industry';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    slug: Attribute.UID;
-    lang: Attribute.String;
-    industryHero: Attribute.DynamicZone<['title.title', 'cta.link']>;
-    industryImage: Attribute.Component<'cta.link'>;
-    language: Attribute.DynamicZone<['title.title', 'cta.link']>;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::industry.industry',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::industry.industry',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 export interface ApiNavbarNavbar extends Schema.SingleType {
   collectionName: 'navbars';
   info: {
@@ -1073,7 +1038,6 @@ declare module '@strapi/types' {
       'api::case-study.case-study': ApiCaseStudyCaseStudy;
       'api::category.category': ApiCategoryCategory;
       'api::footer.footer': ApiFooterFooter;
-      'api::industry.industry': ApiIndustryIndustry;
       'api::navbar.navbar': ApiNavbarNavbar;
       'api::post.post': ApiPostPost;
     }
