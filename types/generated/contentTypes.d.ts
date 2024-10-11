@@ -1047,6 +1047,42 @@ export interface ApiPostPost extends Schema.CollectionType {
   };
 }
 
+export interface ApiProductProduct extends Schema.CollectionType {
+  collectionName: 'products';
+  info: {
+    singularName: 'product';
+    pluralName: 'products';
+    displayName: 'product';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    slug: Attribute.String;
+    lang: Attribute.String;
+    layoutData: Attribute.Component<'layout.layout-data'>;
+    metaData: Attribute.Component<'seo.sb-meta'>;
+    productHero: Attribute.Component<'product-industry.hero-section'>;
+    productImage: Attribute.Component<'cta.link'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::product.product',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::product.product',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -1072,6 +1108,7 @@ declare module '@strapi/types' {
       'api::industry.industry': ApiIndustryIndustry;
       'api::navbar.navbar': ApiNavbarNavbar;
       'api::post.post': ApiPostPost;
+      'api::product.product': ApiProductProduct;
     }
   }
 }

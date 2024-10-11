@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_product_industry_product_tabs",
+  "info": {
+    "displayName": "productTab"
+  },
+  "options": {},
+  "attributes": {
+    "tabName": {
+      "type": "string"
+    },
+    "icon": {
+      "type": "string"
+    }
+  }
+}

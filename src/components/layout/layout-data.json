@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_layout_layout_data",
+  "info": {
+    "displayName": "layoutData",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "footerData": {
+      "type": "string"
+    },
+    "navbar": {
+      "type": "string"
+    },
+    "floating": {
+      "type": "string"
+    }
+  }
+}
