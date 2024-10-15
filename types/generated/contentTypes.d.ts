@@ -942,14 +942,13 @@ export interface ApiIndustryIndustry extends Schema.CollectionType {
   info: {
     singularName: 'industry';
     pluralName: 'industries';
-    displayName: 'Industry';
+    displayName: 'industry';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    slug: Attribute.UID;
-    lang: Attribute.String;
+    id1: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1065,6 +1064,8 @@ export interface ApiProductProduct extends Schema.CollectionType {
     metaData: Attribute.Component<'seo.sb-meta'>;
     productHero: Attribute.Component<'product-industry.hero-section'>;
     productImage: Attribute.Component<'cta.link'>;
+    contactSection: Attribute.Component<'social.contact-section'>;
+    productTabs: Attribute.Component<'product-industry.product-tab'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

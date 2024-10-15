@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_product_industry_product_banners",
+  "info": {
+    "displayName": "productBanner"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "string"
+    },
+    "cta": {
+      "type": "component",
+      "repeatable": false,
+      "component": "cta.link"
+    }
+  }
+}

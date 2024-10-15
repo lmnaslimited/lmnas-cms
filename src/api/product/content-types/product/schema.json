@@ -38,6 +38,16 @@
       "type": "component",
       "repeatable": false,
       "component": "cta.link"
+    },
+    "contactSection": {
+      "type": "component",
+      "repeatable": false,
+      "component": "social.contact-section"
+    },
+    "productTabs": {
+      "type": "component",
+      "repeatable": false,
+      "component": "product-industry.product-tab"
     }
   }
 }

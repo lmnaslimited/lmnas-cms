@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_product_industry_productt_features",
+  "info": {
+    "displayName": "producttFeatures"
+  },
+  "options": {},
+  "attributes": {
+    "icon": {
+      "type": "string"
+    },
+    "featureName": {
+      "type": "string"
+    }
+  }
+}

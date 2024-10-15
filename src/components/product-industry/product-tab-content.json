@@ -1,7 +1,8 @@
 {
   "collectionName": "components_product_industry_product_tab_contents",
   "info": {
-    "displayName": "productTabContent"
+    "displayName": "productTabContent",
+    "description": ""
   },
   "options": {},
   "attributes": {
