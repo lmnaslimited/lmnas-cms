@@ -984,8 +984,7 @@ export interface ApiIndustryIndustry extends Schema.CollectionType {
     draftAndPublish: true;
   };
   attributes: {
-    slug: Attribute.UID;
-    lang: Attribute.String;
+    id1: Attribute.String;
     industryHero: Attribute.DynamicZone<['title.title', 'cta.link']>;
     industryImage: Attribute.Component<'cta.link'>;
     language: Attribute.DynamicZone<['title.title', 'cta.link']>;
@@ -1093,6 +1092,44 @@ export interface ApiPostPost extends Schema.CollectionType {
   };
 }
 
+export interface ApiProductProduct extends Schema.CollectionType {
+  collectionName: 'products';
+  info: {
+    singularName: 'product';
+    pluralName: 'products';
+    displayName: 'product';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    slug: Attribute.String;
+    lang: Attribute.String;
+    layoutData: Attribute.Component<'layout.layout-data'>;
+    metaData: Attribute.Component<'seo.sb-meta'>;
+    productHero: Attribute.Component<'product-industry.hero-section'>;
+    productImage: Attribute.Component<'cta.link'>;
+    contactSection: Attribute.Component<'social.contact-section', true>;
+    productTabs: Attribute.Component<'product-industry.product-tab'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::product.product',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::product.product',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -1119,6 +1156,7 @@ declare module '@strapi/types' {
       'api::industry.industry': ApiIndustryIndustry;
       'api::navbar.navbar': ApiNavbarNavbar;
       'api::post.post': ApiPostPost;
+      'api::product.product': ApiProductProduct;
     }
   }
 }

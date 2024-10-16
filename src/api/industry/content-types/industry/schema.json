@@ -12,10 +12,7 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "slug": {
-      "type": "uid"
-    },
-    "lang": {
+    "id1": {
       "type": "string"
     },
     "industryHero": {

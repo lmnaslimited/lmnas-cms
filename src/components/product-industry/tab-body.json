@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_product_industry_tab_bodies",
+  "info": {
+    "displayName": "tabBody",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "titleText1": {
+      "type": "string"
+    },
+    "titleTitle2": {
+      "type": "string"
+    },
+    "bannerText": {
+      "type": "string"
+    },
+    "ctaText": {
+      "type": "string"
+    },
+    "ctaHref": {
+      "type": "string"
+    }
+  }
+}

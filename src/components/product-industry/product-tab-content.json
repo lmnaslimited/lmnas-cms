@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_product_industry_product_tab_contents",
+  "info": {
+    "displayName": "productTabContent",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "component",
+      "repeatable": true,
+      "component": "title.title"
+    }
+  }
+}
