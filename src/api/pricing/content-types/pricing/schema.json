@@ -1,0 +1,21 @@
+{
+  "kind": "singleType",
+  "collectionName": "pricings",
+  "info": {
+    "singularName": "pricing",
+    "pluralName": "pricings",
+    "displayName": "Pricing",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "pricinghero": {
+      "type": "component",
+      "repeatable": false,
+      "component": "section.hero"
+    }
+  }
+}

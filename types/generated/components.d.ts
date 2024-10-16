@@ -123,6 +123,21 @@ export interface SeoMeta extends Schema.Component {
   };
 }
 
+export interface SectionHero extends Schema.Component {
+  collectionName: 'components_section_heroes';
+  info: {
+    displayName: 'hero';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.Component<'title.title'>;
+    subtitle: Attribute.Component<'title.title'>;
+    cta1: Attribute.Component<'cta.link'>;
+    cta2: Attribute.Component<'cta.link2'>;
+    image: Attribute.String;
+  };
+}
+
 export interface ProductIndustryProductTab extends Schema.Component {
   collectionName: 'components_product_industry_product_tabs';
   info: {
@@ -165,6 +180,46 @@ export interface MarketingSubscribe extends Schema.Component {
   };
   attributes: {
     formId: Attribute.String;
+  };
+}
+
+export interface CtaLink2 extends Schema.Component {
+  collectionName: 'components_cta_link2s';
+  info: {
+    displayName: 'link2';
+  };
+  attributes: {
+    text: Attribute.String;
+    href: Attribute.String;
+    target: Attribute.String;
+    rel: Attribute.String;
+  };
+}
+
+export interface CtaLink extends Schema.Component {
+  collectionName: 'components_cta_links';
+  info: {
+    icon: 'link';
+    displayName: 'link';
+    description: '';
+  };
+  attributes: {
+    linkText: Attribute.String;
+    target: Attribute.String;
+  };
+}
+
+export interface CtaButton extends Schema.Component {
+  collectionName: 'components_cta_buttons';
+  info: {
+    icon: 'arrow-right';
+    description: '';
+    displayName: 'Button';
+  };
+  attributes: {
+    target: Attribute.String;
+    type: Attribute.Enumeration<['button', 'link']>;
+    title: Attribute.Component<'title.title'>;
   };
 }
 
@@ -256,33 +311,6 @@ export interface LayoutFooterColumn extends Schema.Component {
   };
 }
 
-export interface CtaLink extends Schema.Component {
-  collectionName: 'components_cta_links';
-  info: {
-    icon: 'link';
-    displayName: 'link';
-    description: '';
-  };
-  attributes: {
-    linkText: Attribute.String;
-    target: Attribute.String;
-  };
-}
-
-export interface CtaButton extends Schema.Component {
-  collectionName: 'components_cta_buttons';
-  info: {
-    icon: 'arrow-right';
-    description: '';
-    displayName: 'Button';
-  };
-  attributes: {
-    target: Attribute.String;
-    type: Attribute.Enumeration<['button', 'link']>;
-    title: Attribute.Component<'title.title'>;
-  };
-}
-
 export interface BodySection extends Schema.Component {
   collectionName: 'components_body_sections';
   info: {
@@ -310,18 +338,20 @@ declare module '@strapi/types' {
       'seo.sb-meta': SeoSbMeta;
       'seo.sb-meta-attribute-b': SeoSbMetaAttributeB;
       'seo.meta': SeoMeta;
+      'section.hero': SectionHero;
       'product-industry.product-tab': ProductIndustryProductTab;
       'product-industry.product-tab-content': ProductIndustryProductTabContent;
       'product-industry.hero-section': ProductIndustryHeroSection;
       'marketing.subscribe': MarketingSubscribe;
+      'cta.link2': CtaLink2;
+      'cta.link': CtaLink;
+      'cta.button': CtaButton;
       'layout.navs': LayoutNavs;
       'layout.navbar-column': LayoutNavbarColumn;
       'layout.layout-data': LayoutLayoutData;
       'layout.footer-subtitle': LayoutFooterSubtitle;
       'layout.footer-link': LayoutFooterLink;
       'layout.footer-column': LayoutFooterColumn;
-      'cta.link': CtaLink;
-      'cta.button': CtaButton;
       'body.section': BodySection;
     }
   }

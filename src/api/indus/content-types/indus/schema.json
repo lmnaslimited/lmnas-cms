@@ -1,0 +1,20 @@
+{
+  "kind": "collectionType",
+  "collectionName": "induses",
+  "info": {
+    "singularName": "indus",
+    "pluralName": "induses",
+    "displayName": "Indus"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "industryHero": {
+      "type": "component",
+      "repeatable": false,
+      "component": "section.hero"
+    }
+  }
+}

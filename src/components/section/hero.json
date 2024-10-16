@@ -1,0 +1,33 @@
+{
+  "collectionName": "components_section_heroes",
+  "info": {
+    "displayName": "hero",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "component",
+      "repeatable": false,
+      "component": "title.title"
+    },
+    "subtitle": {
+      "type": "component",
+      "repeatable": false,
+      "component": "title.title"
+    },
+    "cta1": {
+      "type": "component",
+      "repeatable": false,
+      "component": "cta.link"
+    },
+    "cta2": {
+      "type": "component",
+      "repeatable": false,
+      "component": "cta.link2"
+    },
+    "image": {
+      "type": "string"
+    }
+  }
+}

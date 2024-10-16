@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_cta_link2s",
+  "info": {
+    "displayName": "link2"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "string"
+    },
+    "href": {
+      "type": "string"
+    },
+    "target": {
+      "type": "string"
+    },
+    "rel": {
+      "type": "string"
+    }
+  }
+}
