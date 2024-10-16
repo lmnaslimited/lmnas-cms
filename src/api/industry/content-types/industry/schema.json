@@ -66,6 +66,11 @@
       "type": "component",
       "repeatable": false,
       "component": "seo.sb-meta"
+    },
+    "cta": {
+      "type": "component",
+      "repeatable": false,
+      "component": "title.sub-title"
     }
   }
 }

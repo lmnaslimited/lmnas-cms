@@ -899,7 +899,42 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
   };
 }
 
-export interface ApiFooterFooter extends Schema.SingleType {
+export interface ApiFloatingButtonFloatingButton extends Schema.CollectionType {
+  collectionName: 'floating_buttons';
+  info: {
+    singularName: 'floating-button';
+    pluralName: 'floating-buttons';
+    displayName: 'floatingButton';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    btn: Attribute.String;
+    tel: Attribute.String;
+    mail: Attribute.String;
+    contact: Attribute.String;
+    contacthref: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::floating-button.floating-button',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::floating-button.floating-button',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiFooterFooter extends Schema.CollectionType {
   collectionName: 'footers';
   info: {
     singularName: 'footer';
@@ -960,6 +995,7 @@ export interface ApiIndustryIndustry extends Schema.CollectionType {
     contactSection: Attribute.Component<'social.contact-section'>;
     layoutData: Attribute.Component<'layout.layout-data'>;
     metaData: Attribute.Component<'seo.sb-meta'>;
+    cta: Attribute.Component<'title.sub-title'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -978,7 +1014,7 @@ export interface ApiIndustryIndustry extends Schema.CollectionType {
   };
 }
 
-export interface ApiNavbarNavbar extends Schema.SingleType {
+export interface ApiNavbarNavbar extends Schema.CollectionType {
   collectionName: 'navbars';
   info: {
     singularName: 'navbar';
@@ -1078,6 +1114,7 @@ declare module '@strapi/types' {
       'api::author.author': ApiAuthorAuthor;
       'api::case-study.case-study': ApiCaseStudyCaseStudy;
       'api::category.category': ApiCategoryCategory;
+      'api::floating-button.floating-button': ApiFloatingButtonFloatingButton;
       'api::footer.footer': ApiFooterFooter;
       'api::industry.industry': ApiIndustryIndustry;
       'api::navbar.navbar': ApiNavbarNavbar;
