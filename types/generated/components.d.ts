@@ -25,6 +25,46 @@ export interface TitleSubTitle extends Schema.Component {
   };
 }
 
+export interface SocialSocial extends Schema.Component {
+  collectionName: 'components_social_socials';
+  info: {
+    icon: 'network-wired';
+    description: '';
+    displayName: 'social';
+  };
+  attributes: {
+    handle: Attribute.String;
+    link: Attribute.String;
+    name: Attribute.String;
+  };
+}
+
+export interface SocialContact extends Schema.Component {
+  collectionName: 'components_social_contacts';
+  info: {
+    displayName: 'contact';
+  };
+  attributes: {
+    icon: Attribute.String;
+    contact: Attribute.String;
+    title: Attribute.String;
+    href: Attribute.String;
+  };
+}
+
+export interface SocialContactSection extends Schema.Component {
+  collectionName: 'components_social_contact_sections';
+  info: {
+    displayName: 'contactSection';
+  };
+  attributes: {
+    tag: Attribute.String;
+    title: Attribute.String;
+    subTitle: Attribute.String;
+    contactMenthos: Attribute.Component<'social.contact', true>;
+  };
+}
+
 export interface SeoSbSchemaData extends Schema.Component {
   collectionName: 'components_seo_sb_schema_data';
   info: {
@@ -83,57 +123,6 @@ export interface SeoMeta extends Schema.Component {
   };
 }
 
-export interface SocialSocial extends Schema.Component {
-  collectionName: 'components_social_socials';
-  info: {
-    icon: 'network-wired';
-    description: '';
-    displayName: 'social';
-  };
-  attributes: {
-    handle: Attribute.String;
-    link: Attribute.String;
-    name: Attribute.String;
-  };
-}
-
-export interface SocialContact extends Schema.Component {
-  collectionName: 'components_social_contacts';
-  info: {
-    displayName: 'contact';
-  };
-  attributes: {
-    icon: Attribute.String;
-    contact: Attribute.String;
-    title: Attribute.String;
-    href: Attribute.String;
-  };
-}
-
-export interface SocialContactSection extends Schema.Component {
-  collectionName: 'components_social_contact_sections';
-  info: {
-    displayName: 'contactSection';
-  };
-  attributes: {
-    tag: Attribute.String;
-    title: Attribute.String;
-    subTitle: Attribute.String;
-    contactMenthos: Attribute.Component<'social.contact', true>;
-  };
-}
-
-export interface MarketingSubscribe extends Schema.Component {
-  collectionName: 'components_marketing_subscribes';
-  info: {
-    icon: 'hand-point-up';
-    displayName: 'subscribe';
-  };
-  attributes: {
-    formId: Attribute.String;
-  };
-}
-
 export interface ProductIndustryTabBody extends Schema.Component {
   collectionName: 'components_product_industry_tab_bodies';
   info: {
@@ -171,6 +160,11 @@ export interface ProductIndustryProductTab extends Schema.Component {
     icon: Attribute.String;
     content: Attribute.Component<'product-industry.tab-body'>;
     features: Attribute.Component<'product-industry.productt-features', true>;
+    usps: Attribute.Component<'product-industry.card', true>;
+    title2: Attribute.Component<'title.title'>;
+    featureDetailscard: Attribute.Component<'product-industry.card', true>;
+    cta1: Attribute.Component<'cta.link'>;
+    cta2: Attribute.Component<'cta.link'>;
   };
 }
 
@@ -206,6 +200,32 @@ export interface ProductIndustryHeroSection extends Schema.Component {
     subTitle: Attribute.Component<'title.title'>;
     cta1: Attribute.Component<'cta.link'>;
     cta2: Attribute.Component<'cta.link'>;
+  };
+}
+
+export interface ProductIndustryCard extends Schema.Component {
+  collectionName: 'components_product_industry_cards';
+  info: {
+    displayName: 'card';
+  };
+  attributes: {
+    icon: Attribute.String;
+    title: Attribute.String;
+    content: Attribute.String;
+    text1: Attribute.String;
+    text2: Attribute.String;
+    highlightText: Attribute.String;
+  };
+}
+
+export interface MarketingSubscribe extends Schema.Component {
+  collectionName: 'components_marketing_subscribes';
+  info: {
+    icon: 'hand-point-up';
+    displayName: 'subscribe';
+  };
+  attributes: {
+    formId: Attribute.String;
   };
 }
 
@@ -344,20 +364,21 @@ declare module '@strapi/types' {
     export interface Components {
       'title.title': TitleTitle;
       'title.sub-title': TitleSubTitle;
+      'social.social': SocialSocial;
+      'social.contact': SocialContact;
+      'social.contact-section': SocialContactSection;
       'seo.sb-schema-data': SeoSbSchemaData;
       'seo.sb-meta': SeoSbMeta;
       'seo.sb-meta-attribute-b': SeoSbMetaAttributeB;
       'seo.meta': SeoMeta;
-      'social.social': SocialSocial;
-      'social.contact': SocialContact;
-      'social.contact-section': SocialContactSection;
-      'marketing.subscribe': MarketingSubscribe;
       'product-industry.tab-body': ProductIndustryTabBody;
       'product-industry.productt-features': ProductIndustryProducttFeatures;
       'product-industry.product-tab': ProductIndustryProductTab;
       'product-industry.product-tab-content': ProductIndustryProductTabContent;
       'product-industry.product-banner': ProductIndustryProductBanner;
       'product-industry.hero-section': ProductIndustryHeroSection;
+      'product-industry.card': ProductIndustryCard;
+      'marketing.subscribe': MarketingSubscribe;
       'layout.navs': LayoutNavs;
       'layout.navbar-column': LayoutNavbarColumn;
       'layout.layout-data': LayoutLayoutData;

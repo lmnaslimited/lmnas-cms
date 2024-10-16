@@ -22,6 +22,32 @@
       "type": "component",
       "repeatable": true,
       "component": "product-industry.productt-features"
+    },
+    "usps": {
+      "displayName": "card",
+      "type": "component",
+      "repeatable": true,
+      "component": "product-industry.card"
+    },
+    "title2": {
+      "type": "component",
+      "repeatable": false,
+      "component": "title.title"
+    },
+    "featureDetailscard": {
+      "type": "component",
+      "repeatable": true,
+      "component": "product-industry.card"
+    },
+    "cta1": {
+      "type": "component",
+      "repeatable": false,
+      "component": "cta.link"
+    },
+    "cta2": {
+      "type": "component",
+      "repeatable": false,
+      "component": "cta.link"
     }
   }
 }

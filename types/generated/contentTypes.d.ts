@@ -1064,7 +1064,7 @@ export interface ApiProductProduct extends Schema.CollectionType {
     metaData: Attribute.Component<'seo.sb-meta'>;
     productHero: Attribute.Component<'product-industry.hero-section'>;
     productImage: Attribute.Component<'cta.link'>;
-    contactSection: Attribute.Component<'social.contact-section'>;
+    contactSection: Attribute.Component<'social.contact-section', true>;
     productTabs: Attribute.Component<'product-industry.product-tab'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;

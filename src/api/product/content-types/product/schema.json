@@ -41,7 +41,7 @@
     },
     "contactSection": {
       "type": "component",
-      "repeatable": false,
+      "repeatable": true,
       "component": "social.contact-section"
     },
     "productTabs": {
