@@ -12,7 +12,7 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "pricinghero": {
+    "heroSection": {
       "type": "component",
       "repeatable": false,
       "component": "section.hero"

@@ -12,7 +12,7 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "herosection": {
+    "heroSection": {
       "type": "component",
       "repeatable": false,
       "component": "section.hero"

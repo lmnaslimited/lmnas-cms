@@ -4,14 +4,15 @@
   "info": {
     "singularName": "pro",
     "pluralName": "pros",
-    "displayName": "Pro"
+    "displayName": "Pro",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
-    "productHero": {
+    "heroSection": {
       "type": "component",
       "repeatable": false,
       "component": "section.hero"

@@ -949,7 +949,7 @@ export interface ApiHomeHome extends Schema.SingleType {
     draftAndPublish: true;
   };
   attributes: {
-    herosection: Attribute.Component<'section.hero'>;
+    heroSection: Attribute.Component<'section.hero'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -966,12 +966,13 @@ export interface ApiIndusIndus extends Schema.CollectionType {
     singularName: 'indus';
     pluralName: 'induses';
     displayName: 'Indus';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    industryHero: Attribute.Component<'section.hero'>;
+    heroSection: Attribute.Component<'section.hero'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1134,7 +1135,7 @@ export interface ApiPricingPricing extends Schema.SingleType {
     draftAndPublish: true;
   };
   attributes: {
-    pricinghero: Attribute.Component<'section.hero'>;
+    heroSection: Attribute.Component<'section.hero'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1159,12 +1160,13 @@ export interface ApiProPro extends Schema.CollectionType {
     singularName: 'pro';
     pluralName: 'pros';
     displayName: 'Pro';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    productHero: Attribute.Component<'section.hero'>;
+    heroSection: Attribute.Component<'section.hero'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
