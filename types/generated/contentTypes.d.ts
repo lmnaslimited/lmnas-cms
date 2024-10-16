@@ -984,7 +984,6 @@ export interface ApiIndustryIndustry extends Schema.CollectionType {
     draftAndPublish: true;
   };
   attributes: {
-    id1: Attribute.String;
     industryHero: Attribute.DynamicZone<['title.title', 'cta.link']>;
     industryImage: Attribute.Component<'cta.link'>;
     language: Attribute.DynamicZone<['title.title', 'cta.link']>;

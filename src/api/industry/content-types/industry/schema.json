@@ -12,9 +12,6 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "id1": {
-      "type": "string"
-    },
     "industryHero": {
       "type": "dynamiczone",
       "components": [
