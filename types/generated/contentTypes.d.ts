@@ -994,6 +994,8 @@ export interface ApiIndustryIndustry extends Schema.CollectionType {
     layoutData: Attribute.Component<'layout.layout-data'>;
     metaData: Attribute.Component<'seo.sb-meta'>;
     cta: Attribute.Component<'title.sub-title'>;
+    slug: Attribute.String;
+    lang: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

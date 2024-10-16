@@ -65,6 +65,12 @@
       "type": "component",
       "repeatable": false,
       "component": "title.sub-title"
+    },
+    "slug": {
+      "type": "string"
+    },
+    "lang": {
+      "type": "string"
     }
   }
 }

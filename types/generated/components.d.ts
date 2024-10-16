@@ -123,17 +123,6 @@ export interface SocialContactSection extends Schema.Component {
   };
 }
 
-export interface MarketingSubscribe extends Schema.Component {
-  collectionName: 'components_marketing_subscribes';
-  info: {
-    icon: 'hand-point-up';
-    displayName: 'subscribe';
-  };
-  attributes: {
-    formId: Attribute.String;
-  };
-}
-
 export interface ProductIndustryTabBody extends Schema.Component {
   collectionName: 'components_product_industry_tab_bodies';
   info: {
@@ -261,6 +250,17 @@ export interface ProductIndustryCard extends Schema.Component {
     text1: Attribute.String;
     text2: Attribute.String;
     highlightText: Attribute.String;
+  };
+}
+
+export interface MarketingSubscribe extends Schema.Component {
+  collectionName: 'components_marketing_subscribes';
+  info: {
+    icon: 'hand-point-up';
+    displayName: 'subscribe';
+  };
+  attributes: {
+    formId: Attribute.String;
   };
 }
 
@@ -406,7 +406,6 @@ declare module '@strapi/types' {
       'social.social': SocialSocial;
       'social.contact': SocialContact;
       'social.contact-section': SocialContactSection;
-      'marketing.subscribe': MarketingSubscribe;
       'product-industry.tab-body': ProductIndustryTabBody;
       'product-industry.productt-features': ProductIndustryProducttFeatures;
       'product-industry.product-tab': ProductIndustryProductTab;
@@ -416,6 +415,7 @@ declare module '@strapi/types' {
       'product-industry.industry-card': ProductIndustryIndustryCard;
       'product-industry.hero-section': ProductIndustryHeroSection;
       'product-industry.card': ProductIndustryCard;
+      'marketing.subscribe': MarketingSubscribe;
       'layout.navs': LayoutNavs;
       'layout.navbar-column': LayoutNavbarColumn;
       'layout.layout-data': LayoutLayoutData;
